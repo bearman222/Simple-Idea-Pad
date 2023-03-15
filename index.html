@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- Add this line to the head section to prevent form submission on pressing Enter -->
+    <script>
+        document.onkeydown = function (e) {
+            return e.key !== 'Enter';
+        };
+    </script>
+</head>
+
+<body class="container">
+    <div id="wrapper" class="col-12 col-md-8 mx-auto">
+        <h1 class="my-4">Simple Idea Pad</h1>
+
+        <!-- TABS -->
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" id="create-tab" data-toggle="tab" href="#create">Create</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="read-tab" data-toggle="tab" href="#read">Read</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="update-tab" data-toggle="tab" href="#update">Update</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="delete-tab" data-toggle="tab" href="#delete">Delete</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <!-- CREATE SECTION -->
+            <div class="tab-pane fade show active" id="create" role="tabpanel" aria-labelledby="create-tab">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h2 class="card-title">New Idea:</h2>
+                        <form id="createItem">
+                            <div class="form-group">
+                                <label for="title-field">Title:</label>
+                                <input id="title-field" type="text" name="title" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label for="idea-field">Idea:</label>
+                                <textarea id="idea-field" name="idea" class="form-control"></textarea>
+                            </div>
+                            <button type="submit" form="createItem" value="Submit" class="btn btn-primary">
+                                Save Idea
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- READ SECTION -->
+            <div class="tab-pane fade" id="read" role="tabpanel" aria-labelledby="read-tab">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h2 class="card-title">Ideas:</h2>
+                        <ul id="ideas-list"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UPDATE SECTION -->
+            <div class="tab-pane fade" id="update" role="tabpanel" aria-labelledby="update-tab">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h2 class="card-title">Edit Idea:</h2>
+                        <form id="updateItem">
+                            <div class="form-group">
+                                <label for="idea-select">Select Idea:</label>
+                                <select id="idea-select" class="form-control"></select>
+                            </div>
+                            <div class="form-group">
+                                <label for="update-title-field">Title:</label>
+                                <input id="update-title-field" type="text" name="title" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label for="update-idea-field">Idea:</label>
+                                <textarea id="update-idea-field" name="idea" class="form-control"></textarea>
+                            </div>
+                            <button type="button" id="update-button" class="btn btn-primary">
+                                Save Changes
+                            </button>
+                            <button type="button" id="cancel-update-button" class="btn btn-secondary">
+                                Cancel
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DELETE SECTION -->
+            <div class="tab-pane fade" id="delete" role="tabpanel" aria-labelledby="delete-tab">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h2 class="card-title">Delete Idea:</h2>
+                        <form id="deleteItem">
+                            <div class="form-group">
+                                <label for="delete-idea-select">Select Idea:</label>
+                                <select id="delete-idea-select" class="form-control"></select>
+                            </div>
+                            <button type="button" id="delete-button" class="btn btn-danger">
+                                Delete Idea
+                            </button>
+                            <button type="button" id="cancel-delete-button" class="btn btn-secondary">
+                                Cancel
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+            integrity="sha384-eMNCOe7tC1doHpGoJtKh7z7lGz7fuP4F8nfdFvAOA6Gg/z6Y5J6XqqyGXYM2ntX5"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+        <footer>
+            <small>A simple idea pad to demonstrate Bootstrap and JavaScript CRUD operations.</small>
+        </footer>
+</body>
+
+</html>

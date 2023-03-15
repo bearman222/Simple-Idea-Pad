@@ -1,0 +1,10 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+.card {
+  border: 3px solid orange ;
+  border-radius: 40px 10px;
+  box-shadow: 18px 12px teal;
+}
